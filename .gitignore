@@ -21,6 +21,7 @@ topup/venv
 topup/docs.zip
 topup/archive.zip
 topup/include
+db_data
 
 # vim temporary files
 *~
