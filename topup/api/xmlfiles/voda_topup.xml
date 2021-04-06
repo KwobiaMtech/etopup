@@ -1,0 +1,10 @@
+<cp_request>
+   <cp_id></cp_id>
+   <cp_transaction_id></cp_transaction_id>
+   <application>1</application>
+   <action>1</action>
+   <user_id type="MSISDN"></user_id>
+   <cp_timer>2</cp_timer>
+   <transaction_price></transaction_price>
+   <transaction_currency>0</transaction_currency>
+</cp_request>

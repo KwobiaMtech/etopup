@@ -1,0 +1,43 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://external.interfaces.ers.seamless.com/">
+   <soapenv:Header />
+   <soapenv:Body>
+      <ext:requestTopup>
+         <context>
+            <channel>WEBSERVICE</channel>
+            <clientComment />
+            <clientId></clientId>
+            <prepareOnly>false</prepareOnly>
+            <clientReference></clientReference>
+            <clientRequestTimeout>30</clientRequestTimeout>
+            <initiatorPrincipalId>
+               <id></id>
+               <type>RESELLERUSER</type>
+               <userId></userId>
+            </initiatorPrincipalId>
+            <password></password>
+         </context>
+         <senderPrincipalId>
+            <id></id>
+            <type>RESELLERUSER</type>
+            <userId></userId>
+         </senderPrincipalId>
+         <topupPrincipalId>
+            <id></id>
+            <type>SUBSCRIBERMSISDN</type>
+         </topupPrincipalId>
+         <senderAccountSpecifier>
+            <accountId></accountId>
+            <accountTypeId>RESELLER</accountTypeId>
+         </senderAccountSpecifier>
+         <topupAccountSpecifier>
+            <accountId></accountId>
+            <accountTypeId>AIRTIME</accountTypeId>
+         </topupAccountSpecifier>
+         <productId>TOPUP</productId>
+         <amount>
+            <currency>GHS</currency>
+            <value></value>
+         </amount>
+      </ext:requestTopup>
+   </soapenv:Body>
+</soapenv:Envelope>

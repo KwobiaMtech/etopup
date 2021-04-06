@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cp_request SYSTEM "cp_req_websvr.dtd">
+<cp_request>
+   <cp_id></cp_id>
+   <cp_transaction_id></cp_transaction_id>
+   <action>5</action>
+</cp_request>

@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ./topup
+    volumes:
+      - ./topup:/topup
+    ports:
+      - 8001:8000
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=topup
+      - POSTGRES_PASSWORD=topup
+      - POSTGRES_DB=topup
+      - POSTGRES_SERVER=db
+      - PYTHONPATH=/topup
+  db:
+    image: postgres:12.4
+    restart: always
+    environment:
+      # if user, pass, and db changes, need to remove previous containers # docker-compose rm -vf
+      - POSTGRES_USER=topup
+      - POSTGRES_PASSWORD=topup
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+
