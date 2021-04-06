@@ -32,3 +32,8 @@ topup/api/xmlfiles/topup.xml
 topup/lib
 topup/bin
 topup/.env
+topup/api/QueryApis/__pycache__
+topup/api/__pycache__
+topup/api/repository/__pycache__
+topup/api/routes/__pycache__
+topup/config/__pycache__
