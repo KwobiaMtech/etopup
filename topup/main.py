@@ -21,4 +21,4 @@ app.include_router(glo.router)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return "route /docs for api documentation"
