@@ -6,7 +6,7 @@ services:
     volumes:
       - ./topup:/topup
     ports:
-      - 8001:8000
+      - 7030:8000
     depends_on:
       - db
     environment:

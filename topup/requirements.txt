@@ -1,5 +1,5 @@
 passlib
-uvicorn
+uvicorn[standard]
 fastapi
 sqlalchemy
 bcrypt
@@ -9,3 +9,4 @@ python-dotenv
 psycopg2-binary
 python-multipart
 xmltodict
+websocket
