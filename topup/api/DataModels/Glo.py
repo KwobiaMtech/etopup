@@ -2,12 +2,13 @@ import requests
 import xmltodict as xmltodict
 from requests.structures import CaseInsensitiveDict
 
-from api.QueryApis.GloDataClass import GloDataClass
-from api.QueryApis.TopUpInterface import TopUpInterface
+from api.DataModels.GloDataClass import GloDataClass
+from api.DataModels.TopUpInterface import TopUpInterface
 from config.config import settings
 
 
 class Glo(TopUpInterface):
+
     def loadXML(price, msisdn) -> str:
         glo_data = GloDataClass(
             settings.GLO_ACCOUNT_ID,
@@ -26,14 +27,18 @@ class Glo(TopUpInterface):
         data = cls.loadXML(topup_price, msisdn)
         return cls.queryApi(data, settings.GLO_TOP_UP_API)
 
-    @staticmethod
-    def queryApi(data: str, url):
-        balance = "not available"
+    @classmethod
+    def queryApi(cls, data: str, url) -> dict:
         headers = CaseInsensitiveDict()
         headers["Content-Type"] = "application/xml"
         headers["Accept"] = "application/xml"
         resp = requests.post(url, headers=headers, data=data)
         resp_dict = xmltodict.parse(resp.content)
+        return Glo.getResponse(resp_dict)
+
+    @staticmethod
+    def getResponse(resp_dict: dict) -> dict:
+        balance = "not available"
         status = resp_dict["soap:Envelope"]["soap:Body"]["ns2:requestTopupResponse"]["return"]["resultCode"]
         reference = resp_dict["soap:Envelope"]["soap:Body"]["ns2:requestTopupResponse"]["return"]["ersReference"]
         if status == "0":

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from api.repository import UserRepository as UserRepository, UserAccountRepository
 from api.repository import VodafoneRepository as VodaRepository
 from api import schemas, oauth2
-from api.QueryApis.Vodafone import Vodafone as voda
+from api.DataModels.Vodafone import Vodafone as voda
 from database import get_db
 
 router = APIRouter(

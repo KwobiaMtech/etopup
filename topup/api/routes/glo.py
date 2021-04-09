@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from api.repository import UserRepository as UserRepository
 from api.repository import GloRepository, UserAccountRepository
 from api import schemas, oauth2
-from api.QueryApis.Glo import Glo as glo
+from api.DataModels.Glo import Glo as glo
 from database import get_db
 
 router = APIRouter(
