@@ -2,12 +2,6 @@ import secrets
 from dataclasses import dataclass
 import xml.etree.ElementTree as ET
 
-import requests
-import xmltodict
-from requests.structures import CaseInsensitiveDict
-
-from config.config import settings
-
 
 @dataclass
 class GloDataClass:

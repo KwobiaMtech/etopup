@@ -27,8 +27,9 @@ def top_up(request: schemas.TopUpData, db: Session = Depends(get_db),
     return result
 
 
-@router.get('/balance')
-def get_balance(db: Session = Depends(get_db),
-                user: schemas.User = Depends(oauth2.get_current_user)):
+@router.get('/get_balance')
+def top_up(db: Session = Depends(get_db),
+           user: schemas.User = Depends(oauth2.get_current_user)):
     user_data = UserRepository.AuthUser(user.email, db)
-    return voda.get_balance()
+    user_balance = UserAccountRepository.get_user_balance(user_data.id, 'vodafone', db)
+    return user_balance

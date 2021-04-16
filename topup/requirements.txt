@@ -4,10 +4,10 @@ fastapi
 sqlalchemy
 bcrypt
 python-jose
-requestscd
+requests
 python-dotenv
 psycopg2-binary
 python-multipart
 xmltodict
 websocket
-requests
+
