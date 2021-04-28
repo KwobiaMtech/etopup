@@ -6,6 +6,7 @@ from api import schemas, oauth2
 from api.DataModels.Glo import Glo as glo
 from database import get_db
 
+
 router = APIRouter(
     prefix='/glo',
     tags=['GLO TopUp']

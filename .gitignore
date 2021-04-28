@@ -29,6 +29,7 @@ db_data
 topup/api/xmlfiles/get_balance.xml
 topup/api/xmlfiles/glotopup.xml
 topup/api/xmlfiles/topup.xml
+topup/api/*.xml
 topup/lib
 topup/bin
 topup/.env
