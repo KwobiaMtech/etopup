@@ -17,6 +17,8 @@ services:
       - PYTHONPATH=/topup
   db:
     image: postgres:12.4
+    ports:
+      - "54320:5432"
     restart: always
     environment:
       # if user, pass, and db changes, need to remove previous containers # docker-compose rm -vf
