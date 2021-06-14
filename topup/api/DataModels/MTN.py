@@ -45,10 +45,11 @@ class MTN:
     @staticmethod
     def get_top_up_data(phone, amount, key):
         param = dict()
+        param['function'] = "TopupFl"
         param['SessionID'] = MTN.get_session_id()
         param['RequestUniqueID'] = random.randrange(1111111111, 9999999999)
-        param['ProductCode'] = 'MTNFLEXIDB'
-        param['SystemServiceID'] = '16'
+        param['ProductCode'] = 'MTN01'
+        param['SystemServiceID'] = '2'
         param['ReferalNumber'] = phone
         param['Amount'] = str(float(amount * 100))
         param['FromAni'] = ''
@@ -69,7 +70,7 @@ class MTN:
         terminal_id = '17946956'
         key = '1100894491207457'
         transaction_key = '1157699898'
-        data = cls.get_top_up_data(phone, 0.3, key)
+        data = cls.get_top_up_data(phone, price, key)
         response = requests.post(url, cls.get_topup_post_data(
             terminal_id, transaction_key, data))
         encrypted_data = response.json()['Data']
