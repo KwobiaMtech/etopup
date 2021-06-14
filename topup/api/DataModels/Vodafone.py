@@ -29,12 +29,11 @@ class Vodafone:
 
     @staticmethod
     def get_balance():
-        url = 'http://134.209.17.7:8040/voda/bundle'
         headers = CaseInsensitiveDict()
         headers["Content-Type"] = "application/xml"
         headers["Accept"] = "application/xml"
         data = Vodafone.get_balance_xml()
-        resp = requests.post(url, headers=headers, data=data)
+        resp = requests.post(settings.VODAFONE_TOP_UP_API, headers=headers, data=data)
         resp_dict = xmltodict.parse(resp.content)
         return float(resp_dict["cp_reply"]["result"]) / 10000
 

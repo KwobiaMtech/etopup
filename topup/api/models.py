@@ -17,6 +17,19 @@ class Vodafone(Base):
     creator = relationship("User", back_populates="vodafone")
 
 
+class MTN(Base):
+    __tablename__ = 'mtn'
+
+    id = Column(Integer, primary_key=True, index=True)
+    price = Column(Float)
+    phone = Column(String)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    ref = Column(String, nullable=True)
+    status = Column(String, nullable=True)
+
+    creator = relationship("User", back_populates="mtn")
+
+
 class Glo(Base):
     __tablename__ = 'glo'
 
@@ -44,6 +57,7 @@ class User(Base):
     user_account = relationship('UserAccount', back_populates="creator")
     vodafone = relationship('Vodafone', back_populates="creator")
     glo = relationship('Glo', back_populates="creator")
+    mtn = relationship('MTN', back_populates="creator")
     created_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.current_timestamp())
 
 
