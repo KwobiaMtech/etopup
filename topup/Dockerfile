@@ -1,4 +1,6 @@
 FROM python
+ENV http_proxy http://proxy-chain.xxx.com:911/
+ENV https_proxy http://proxy-chain.xxx.com:912/
 COPY . /topup
 WORKDIR /topup
 RUN pip install -r requirements.txt
