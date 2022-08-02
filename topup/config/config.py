@@ -1,3 +1,4 @@
+from ast import Str
 from pydantic import BaseSettings
 import os
 
@@ -14,6 +15,11 @@ class Settings(BaseSettings):
     CP_ID: str = os.getenv('CP_ID')
     GLO_TOP_UP_API: str = os.getenv('GLO_TOP_UP_API')
     VODAFONE_TOP_UP_API: str = os.getenv('VODAFONE_TOP_UP_API')
+    MPAY_DISTRIBUTE_API: str = os.getenv('MPAY_DISTRIBUTE_API')
+    MPAY_TOPUP_API: str = os.getenv('MPAY_TOPUP_API')
+    MPAY_TERMINAL_ID: str = os.getenv('MPAY_TERMINAL_ID')
+    MPAY_KEY:str = os.getenv('MPAY_KEY')
+    MPAY_TRANSACTION_KEY:str = os.getenv('MPAY_TRANSACTION_KEY')
 
     class Config:
         env_file = '.env'

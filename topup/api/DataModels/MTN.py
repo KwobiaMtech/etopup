@@ -27,9 +27,9 @@ class MTN:
 
     @staticmethod
     def get_session_id() -> str:
-        url = 'http://178.79.179.85:8011/mpay/distribute'
-        terminal_id = '17946956'
-        key = '1100894491207457'
+        url = settings.MPAY_DISTRIBUTE_API
+        terminal_id = settings.MPAY_TERMINAL_ID
+        key = settings.MPAY_KEY
         data = MTN.get_encrypted_session_data(key)
         response = requests.post(url, MTN.get_post_data(terminal_id, data))
         clean_encrypted = response.json()['Data']
@@ -66,10 +66,10 @@ class MTN:
 
     @classmethod
     def top_up(cls, phone, price):
-        url = 'http://178.79.179.85:8011/mpay/topup'
-        terminal_id = '17946956'
-        key = '1100894491207457'
-        transaction_key = '1157699898'
+        url = settings.MPAY_TOPUP_API
+        terminal_id = settings.MPAY_TERMINAL_ID
+        key = settings.MPAY_KEY
+        transaction_key = settings.MPAY_TRANSACTION_KEY
         data = cls.get_top_up_data(phone, price, key)
         response = requests.post(url, cls.get_topup_post_data(
             terminal_id, transaction_key, data))

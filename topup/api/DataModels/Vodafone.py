@@ -11,7 +11,7 @@ class Vodafone:
     def get_topup_xml(price, msisdn):
         with open('api/xmlfiles/voda_topup.xml', encoding='latin-1') as f:
             tree = ET.parse(f)
-            tree.find('.//cp_id').text = 'kenee3'
+            tree.find('.//cp_id').text = settings.CP_ID
             tree.find('.//cp_transaction_id').text = secrets.token_hex(nbytes=14)
             tree.find('.//user_id').text = msisdn
             tree.find('.//transaction_price').text = str(price)
